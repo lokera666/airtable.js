@@ -49,6 +49,11 @@ export const paramValidators = {
         isBoolean,
         'the value for `returnFieldsByFieldId` should be a boolean'
     ),
+
+    recordMetadata: check(
+        check.isArrayOf(isString),
+        'the value for `recordMetadata` should be an array of strings'
+    ),
 };
 
 export const URL_CHARACTER_LENGTH_LIMIT = 15000;
@@ -75,4 +80,5 @@ export interface QueryParams<TFields> {
     userLocale?: string;
     method?: string;
     returnFieldsByFieldId?: boolean;
+    recordMetadata?: string[];
 }
